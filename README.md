@@ -86,25 +86,25 @@ df.to_csv('mycsvfile.csv',index=False)
  
 **Solution Summary by Task:**
 
-- Task 1, the solution involves creating a visualization of the top 20 companies by applying filters where the role is ‘Experience Designer’, the job title is ‘UI/UX Designer’, and the company name must contain more than five characters. A bar or column chart in Tableau can be used for this ranking.
+- **Task 1:** the solution involves creating a visualization of the top 20 companies by applying filters where the role is ‘Experience Designer’, the job title is ‘UI/UX Designer’, and the company name must contain more than five characters. A bar or column chart in Tableau can be used for this ranking.
 
-- Task 2, a more complex filtering logic is required. The dataset should be narrowed down to include candidates with B.Tech, M.Tech, or PhD qualifications, seeking full-time roles in African countries, with job titles starting with 'D', male preference, and company size above 80,000. Additional filters include contact names starting with 'A', and applications through the Indeed portal. A map visualization must be included and should respond to latitude and longitude clicks. The dashboard should only be displayed during the 3 PM to 6 PM IST window.
-
-
-- Task 3 requires focusing on internship roles with latitude less than 10. Data from countries starting with A, B, C, or D should be excluded. Further constraints include job titles shorter than 10 characters and company size under 50,000. This dashboard must also be time-bound and displayed only between 3 PM to 5 PM IST.
+- **Task 2:** a more complex filtering logic is required. The dataset should be narrowed down to include candidates with B.Tech, M.Tech, or PhD qualifications, seeking full-time roles in African countries, with job titles starting with 'D', male preference, and company size above 80,000. Additional filters include contact names starting with 'A', and applications through the Indeed portal. A map visualization must be included and should respond to latitude and longitude clicks. The dashboard should only be displayed during the 3 PM to 6 PM IST window.
 
 
-- Task 4, the solution involves identifying the top 10 companies for positions where the role is ‘Data Engineer’ and the job title is ‘Data Scientist’. The data must exclude Asian countries and focus only on female-preferred roles in countries that start with the letter ‘C’ and have latitude below 10. Only B.Tech qualifications should be considered, and the posting date must fall between 01/01/2023 and 06/01/2023. This visualization is also limited to the 3 PM to 5 PM IST time slot.
+- **Task 3:** requires focusing on internship roles with latitude less than 10. Data from countries starting with A, B, C, or D should be excluded. Further constraints include job titles shorter than 10 characters and company size under 50,000. This dashboard must also be time-bound and displayed only between 3 PM to 5 PM IST.
+
+
+- **Task 4** the solution involves identifying the top 10 companies for positions where the role is ‘Data Engineer’ and the job title is ‘Data Scientist’. The data must exclude Asian countries and focus only on female-preferred roles in countries that start with the letter ‘C’ and have latitude below 10. Only B.Tech qualifications should be considered, and the posting date must fall between 01/01/2023 and 06/01/2023. This visualization is also limited to the 3 PM to 5 PM IST time slot.
 
  
-- Task 5 is a comparative analysis between India and Germany, focusing on B.Tech-qualified, full-time candidates with more than 2 years of experience. Job titles must be Data Scientist, Art Teacher, or Aerospace Engineer, and the salary must exceed $10,000. The chart should be color-coded to distinguish the two countries (e.g., orange for India, green for Germany) and must include only female-preferred postings from the Indeed portal, published before 08/01/2023. The dashboard should be shown only between 3 PM and 5 PM IST.
+- **Task 5:** is a comparative analysis between India and Germany, focusing on B.Tech-qualified, full-time candidates with more than 2 years of experience. Job titles must be Data Scientist, Art Teacher, or Aerospace Engineer, and the salary must exceed $10,000. The chart should be color-coded to distinguish the two countries (e.g., orange for India, green for Germany) and must include only female-preferred postings from the Indeed portal, published before 08/01/2023. The dashboard should be shown only between 3 PM and 5 PM IST.
 
 
-- Task 6 involves filtering data for Mechanical Engineer roles with experience over 5 years, in Asian countries, at companies with an exact size of 50,000. Salaries must be above $50,000, and work type should be either part-time or full-time. Only male-preferred roles from the Indeed portal are included, and all other qualifications must be ignored. The output must be limited to the 3 PM to 5 PM IST window.
+- **Task 6:** involves filtering data for Mechanical Engineer roles with experience over 5 years, in Asian countries, at companies with an exact size of 50,000. Salaries must be above $50,000, and work type should be either part-time or full-time. Only male-preferred roles from the Indeed portal are included, and all other qualifications must be ignored. The output must be limited to the 3 PM to 5 PM IST window.
 
  **Step-by-Step Guide for Each Task in Tableau**
 
-Task 1: Top 20 Companies by Experience Designer Role
+**Task 1: Top 20 Companies by Experience Designer Role**
 1. Load your dataset into Tableau (Excel/CSV).
 2. Drag and drop fields: `Role`, `Job Title`, and `Company Name`.
 3. Apply filters:
@@ -117,7 +117,7 @@ Task 1: Top 20 Companies by Experience Designer Role
 7. Add meaningful titles and axis labels.
 
 
- Task 2: Full-Time Jobs in African Countries
+ **Task 2: Full-Time Jobs in African Countries**
 1. Load the dataset and apply filters:
    - `Qualification IN ("B.Tech", "M.Tech", "PhD")`
    - `Work Type = "Full time"`
@@ -137,7 +137,7 @@ IF HOUR([Application Time]) BETWEEN 15 AND 18 THEN "Show" ELSE "Hide" END
 5. Use the "Show" condition in filter to restrict to 3–6 PM IST.
 
 
-Task 3: Internships with Geographic and Character Limits
+**Task 3: Internships with Geographic and Character Limits**
 1. Apply filters:
 - `Work Type = "Intern"`
 - `Latitude < 10`
@@ -154,7 +154,7 @@ IF HOUR([Application Time]) BETWEEN 15 AND 17 THEN "Show" ELSE "Hide"
 
 ---
 
-Task 4: Top 10 Companies – Data Scientist Role (No Asian Countries)
+**Task 4: Top 10 Companies – Data Scientist Role (No Asian Countries)**
 1. Apply filters:
 - `Role = "Data Engineer"`
 - `Job Title = "Data Scientist"`
@@ -169,7 +169,7 @@ Task 4: Top 10 Companies – Data Scientist Role (No Asian Countries)
 4. Add 3–5 PM IST visibility using a time field filter.
 
 
-Task 5: India vs Germany Comparison (Experience & Salary Filters)
+**Task 5: India vs Germany Comparison (Experience & Salary Filters)**
 1. Filter:
 - `Country IN ("India", "Germany")`
 - `Qualification = "B.Tech"`
@@ -190,7 +190,7 @@ ELSEIF [Country] = "Germany" THEN "Green" END
 5. Use calculated field to restrict visibility to 3–5 PM IST.
 
 
-Task 6: Mechanical Engineering Jobs in Asia
+**Task 6: Mechanical Engineering Jobs in Asia**
 1. Apply filters:
 - `Company Size = 50000`
 - `Job Title = "Mechanical Engineer"`
